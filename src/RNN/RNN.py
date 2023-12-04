@@ -14,23 +14,26 @@ from keras.layers import LSTM
 from keras.callbacks import EarlyStopping
 import timesynth as ts
 
+# This code puts the delta, theta, alpha, beta, and gamma waves of the maze data and recall data in 
+# separate dataframes. The data is then augmented and labelled and then combined into one large array which 
+# is passed into the RNN model. 
 
 
 
 
 def Maze():
-    maze = "/Users/ishwarjotgrewal/Downloads/465Data/Maze"
+    script_directory = os.path.dirname(os.path.abspath(__file__))
+
+    # Construct the path to the "Maze" subfolder
+    maze = os.path.join(script_directory, "Maze")
+  
 
     # Use glob to get a list of all CSV files in the directory
     csv_files = glob(f"{maze}/*.csv")
     image_folder = os.path.join(maze, 'Images')
     os.makedirs(image_folder, exist_ok=True)
 
-    # Create subfolders for 'maze' and 'recall' images
-    maze_folder = os.path.join(image_folder, 'maze')
-    recall_folder = os.path.join(image_folder, 'recall')
-    os.makedirs(maze_folder, exist_ok=True)
-    os.makedirs(recall_folder, exist_ok=True)
+  
 
     # Initialize an empty list to store DataFrames
     dataframes_list = []
@@ -80,18 +83,15 @@ def Maze():
 
 
 def Recall():
-    recall = "/Users/ishwarjotgrewal/Downloads/465Data/Recall"
+    
+    script_directory = os.path.dirname(os.path.abspath(__file__))
+
+    # Construct the path to the "Maze" subfolder
+    recall = os.path.join(script_directory, "Recall")
 
     # Use glob to get a list of all CSV files in the directory
     csv_files = glob(f"{recall}/*.csv")
-    image_folder = os.path.join(recall, 'Images')
-    os.makedirs(image_folder, exist_ok=True)
-
-    # Create subfolders for 'maze' and 'recall' images
-    maze_folder = os.path.join(image_folder, 'maze')
-    recall_folder = os.path.join(image_folder, 'recall')
-    os.makedirs(maze_folder, exist_ok=True)
-    os.makedirs(recall_folder, exist_ok=True)
+  
 
     # Initialize an empty list to store DataFrames
     dataframes_list = []
