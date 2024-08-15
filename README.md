@@ -1,1 +1,3 @@
-# recall-vs-processing
+# Active Recall or Problem Solving
+
+Our project's goal was to develop a machine learning model to predict whether a user is engaged in problem-solving or memory recall tasks based on EEG data from the Muse 2 device. By analyzing brainwave patterns and additional metrics like heart rate and movement, we used the MindMonitor app to extract and process data beyond the device's standard functions. Participants completed a maze for problem-solving and a rapid recall game for memory tasks. Our objective was to create a reliable classification system to understand brain activity during cognitive tasks, providing insights into how the brain functions during intensive activities like exams.
